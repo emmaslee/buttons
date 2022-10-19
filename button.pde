@@ -35,13 +35,14 @@ class Button {
   //}
   
   void show() {
- // drawRect();
- drawLable();
-  //checkForClick();
-  
+  drawRect();
+  drawLable();
+  checkForClick();
+  }
   //void drawRect() {
    
   //}
+  void drawRect() {
     rectMode(CENTER);
     if (mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h/2) {
     fill(highlight);
@@ -51,6 +52,7 @@ class Button {
   stroke(0);
   strokeWeight(4);
   rect(x, y, w, h, 30);
+  }
   
   void drawLable() {
   //text label
@@ -67,15 +69,16 @@ class Button {
   }
   }
   
-  
+  void checkForClick() {
   if (mouseReleased && mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h/2) {
     clicked = true;
   } else {
     clicked = false;
   }
   }
-}
+  
+  }
 
-void touchingMouse () {
+//void touchingMouse () {
 // mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h/2
-}
+//}
